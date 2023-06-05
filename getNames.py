@@ -1,7 +1,7 @@
 import json
 from web3 import Web3
 
-def getAmountNamesRegistered():
+def getAmountNamesRegistered() -> str:
     flare_rpc = 'https://flare-api.flare.network/ext/C/rpc'
     web3 = Web3(Web3.HTTPProvider(flare_rpc))
 
@@ -16,12 +16,5 @@ def getAmountNamesRegistered():
 
     #convert supply to Wei witch is 18 decimal places)
     print('Total Names: ', total_names)
-
-def changeDiscordChannelName():
-    print()
-
-def main():
-    getAmountNamesRegistered()
-    changeDiscordChannelName()
-
-main()
+    
+    return total_names
