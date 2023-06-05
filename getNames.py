@@ -11,10 +11,8 @@ def getAmountNamesRegistered() -> str:
 
     contract = web3.eth.contract(address=base_registrar_address, abi=abi)
 
-    #need to put .call() at the end to call the smart contract
     total_names = contract.functions.balanceOf(name_wrapper_address).call()
 
-    #convert supply to Wei witch is 18 decimal places)
-    print('Total Names: ', total_names)
-    
+    print('Total Registered Names: ', total_names)
+
     return total_names
